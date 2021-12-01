@@ -1,19 +1,13 @@
-<style> h1{Background-color:green} </style>
-<% if @player_1_name &&  @player_2_name %>
-<h1> <%=@player_1_name%> vs. <%=@player_2_name%> </h1>
-<% end %>
-
-<div>
-  <form action='/names' method='post'> 
-    <label for="player_1_name"> 
-      Enter player 1 name
-    <input type='text' name='player_1_name'> 
-    </label>
-    <label for="player_2_name"> 
-      Enter player 2 name 
-    <input type='text' name='player_2_name'> 
-    </label>
-    <input type='submit' value='Submit'>
-  </form>
-</div>
-
+<h1>Battle!</h1>
+<h2>Sign in to play</h2>
+<form action="/names" method="post">
+  <label for="player_1_name">
+    Player 1 name
+    <input type="text" name="player_1_name">
+  </label>
+  <label for="player_2_name">
+    Player 2 name
+    <input type="text" name="player_2_name">
+  </label>
+  <input type="submit" value="Submit">
+</form>
