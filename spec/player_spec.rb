@@ -1,9 +1,25 @@
 require 'player'
 
 describe Player do
+  before do
+    @player1 = Player.new("Alfonso")
+    @player2 = Player.new("Jessica")
+  end
 
   it "Returns its name" do
-    subject = Player.new("Alfonso")
-    expect(subject.name).to eq("Alfonso")
+    expect(@player1.name).to eq("Alfonso")
   end
+
+  it "Returns player health" do
+    expect(@player1.health).to eq Player::DEFAULT_HIT_POINTS 
+  end
+
+  it "Attack a player" do
+    expect(@player2).to receive(:reduce_health)
+    @player1.attack(@player2)
+  end
+  it "Reduces player health" do
+    expect{ @player1.reduce_health }.to change{ @player1.health }.by(-10)
+  end
+
 end

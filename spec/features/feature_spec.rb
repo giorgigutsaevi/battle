@@ -11,8 +11,14 @@ feature "battle game" do
 
 	scenario "Player1 attacks Player2 and gets confirmation" do
 		sign_in_and_play
-		choose 'attack'
-		click_button :Submit
+		attack
 		expect(page).to have_content "Alfonso Attack Giorgi"
+	end
+
+	scenario "Player1's attack reduces Player2's health by 10" do
+		sign_in_and_play
+		attack
+		click_button :Continue
+		expect(page).to have_content 'Giorgi: 50hp'
 	end
 end
