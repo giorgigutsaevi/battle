@@ -1,11 +1,3 @@
-
-# feature "Testing infrastructure" do
-# 	scenario "checking homepage" do
-# 		visit("/")
-# 		expect(page).to have_content "Testing infrastructure working!"
-# 	end
-# end
-
 feature "battle game" do
 	scenario "seeing inputted names" do
 		sign_in_and_play
