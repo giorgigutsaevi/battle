@@ -12,7 +12,7 @@ feature "battle game" do
 	scenario "Player1 attacks Player2 and gets confirmation" do
 		sign_in_and_play
 		attack
-		expect(page).to have_content "Alfonso Attack Giorgi"
+		expect(page).to have_content "Alfonso attacks Giorgi"
 	end
 
 	scenario "Player1's attack reduces Player2's health by 10" do
