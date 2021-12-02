@@ -1,6 +1,12 @@
 
-<h1><%= @game.player_1.name %> attacks <%= @game.player_2.name %></h1>
+<% if @game.active_player != @game.player_1%>
+  <h1> <%=@game.player_1.name %> attacks <%=@game.player_2.name %></h1>
+
+<% else %>
+  <h1><%=@game.player_2.name %> attacks <%=@game.player_1.name %></h1>
+<% end %>
 
 <form action="/play" method="get">
   <input type="submit" value="Continue">
 </form>
+

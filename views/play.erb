@@ -1,9 +1,26 @@
+
+
 <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
+
+<% if @game.active_player == @game.player_1%>
+  <div>
+    <h2> <%=@game.player_1.name%>'s turn to attack </h2>
+  </div>
+<% elsif @game.active_player == @game.player_2%>
+  <div>
+    <h2> <%=@game.player_2.name%>'s turn to attack </h2>
+  </div>
+<%end%>
+
 <div>
-<%= @game.player_2.name %>: <%= @game.player_2.health %>hp
+  <%= @game.player_1.name %>: <%= @game.player_1.health %>hp
 </div>
 
-<form action="/action" method="post">
+<div>
+  <%= @game.player_2.name %>: <%= @game.player_2.health %>hp
+</div>
+
+<form action="/action"method="post">
   <input type="radio" name="attack" value="Attack">
   <label for="attack">Attack!</label><br>
   <input type="submit" value="Submit">

@@ -34,11 +34,33 @@ describe Game do
     end
   end
 
-  context "Attacking" do
+  context "attacking" do
     it "Attack a player" do
       expect(@player2).to receive(:reduce_health)
       subject.attack(@player2)
     end
+  end
+
+  # context "assigning currently active player" do
+
+  #   before do
+  #     subject.current_player('gandalf')
+  #   end
+
+  #   it 'assigns active player' do
+  #     expect(subject.active_player).to eq 'gandalf'
+  #   end
+  # end
+
+  context "switching players" do
+    before do
+      subject.switch_player
+    end
+
+    it 'switches the active player' do
+      expect(subject.active_player).to eq 'balrog'
+    end
+
   end
 
 end
