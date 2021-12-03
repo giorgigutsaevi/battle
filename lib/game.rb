@@ -19,10 +19,6 @@ class Game
     player.reduce_health
   end
 
-  # def current_player(player)
-  #   @active_player = player if @players.include?(player)
-  # end
-
   def switch_player
     if @active_player == player_1
       @active_player = player_2

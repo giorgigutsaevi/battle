@@ -1,4 +1,41 @@
+<style>
+#player1-hp{
+  background-color: #519259;
+  padding: 10px;
+  width: 10%;
+  border-radius: 1em;
+  text-align: center;
+  margin-bottom: 3px;
+}
 
+#player2-hp{
+  background-color: #B78459;
+  padding: 10px;
+  width: 10%;
+  border-radius: 1em;
+  text-align: center;
+}
+
+#attack-label{
+  color: #8E0505;
+  padding: 0.3px;
+}
+
+form{
+  margin-top: 0.5em;
+  width: 10em;
+}
+
+input{
+  border: none;
+  padding: 7px 20px;
+  border-radius: 10px;
+  background-color: #FF5151;
+  color: whitesmoke;
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+</style>
 
 <h1><%= @game.player_1.name %> vs. <%= @game.player_2.name %></h1>
 
@@ -12,16 +49,16 @@
   </div>
 <%end%>
 
-<div>
+<div id='player1-hp'>
   <%= @game.player_1.name %>: <%= @game.player_1.health %>hp
 </div>
 
-<div>
+<div id='player2-hp'>
   <%= @game.player_2.name %>: <%= @game.player_2.health %>hp
 </div>
 
 <form action="/action"method="post">
   <input type="radio" name="attack" value="Attack">
-  <label for="attack">Attack!</label><br>
-  <input type="submit" value="Submit">
+  <label for="attack" id='attack-label'>Attack!</label><br>
+  <input type="submit" value="Submit" id='submit-button'>
 </form>

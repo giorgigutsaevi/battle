@@ -41,17 +41,6 @@ describe Game do
     end
   end
 
-  # context "assigning currently active player" do
-
-  #   before do
-  #     subject.current_player('gandalf')
-  #   end
-
-  #   it 'assigns active player' do
-  #     expect(subject.active_player).to eq 'gandalf'
-  #   end
-  # end
-
   context "switching players" do
     before do
       subject.switch_player
